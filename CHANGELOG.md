@@ -2,6 +2,11 @@
 
 版本遵循语义化版本：PATCH 用于不改变判断框架的小修正；MINOR 用于新增模式或重要校准；MAJOR 用于改变核心评审模型或输出协议。
 
+## 0.2.1 — 2026-10-02
+
+- 完成 v1.0 前审计与真实 CLI clean-install / Skill 行为回归记录。
+- 修订强机制合成案例，补足测试所需的合成文献缺口材料；未改变 Reviewer 核心判断模型。
+
 ## 0.2.0 — 2026-10-02
 
 - 新增独立的 proposal-reviewer-calibrator Skill，分离申请书评审与 Reviewer 校准。

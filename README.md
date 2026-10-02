@@ -10,13 +10,13 @@
 
 若要在 Codex CLI 中添加 GitHub Marketplace 并固定到发布 tag：
 
-    codex plugin marketplace add shuaif266-netizen/Evaluation-Expert- --ref v0.2.0
+    codex plugin marketplace add shuaif266-netizen/Evaluation-Expert- --ref v0.2.1
 
 这里由 --ref 固定 Marketplace 仓库快照；Marketplace manifest 的插件源是 source: local、path: ./，所以插件从同一个固定快照根目录加载，不会再跳回 main。升级到新版本时，将 ref 换成新发布 tag。
 
 以下 Marketplace 管理命令有 OpenAI 官方 Plugin 文档支持：
 
-    codex plugin marketplace add shuaif266-netizen/Evaluation-Expert- --ref v0.2.0
+    codex plugin marketplace add shuaif266-netizen/Evaluation-Expert- --ref v0.2.1
     codex plugin marketplace list
     codex plugin marketplace upgrade evaluation-expert
     codex plugin marketplace remove evaluation-expert

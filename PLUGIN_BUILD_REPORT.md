@@ -1,43 +1,33 @@
 # Plugin 构建报告
 
 日期：2026-10-02  
-版本：0.2.0  
+版本：0.2.1  
 目标仓库：shuaif266-netizen/Evaluation-Expert-
 
-## 本轮变化
+## 0.2.x 架构
 
-- 保留主 Skill ID nssfc-proposal-reviewer，避免破坏已有调用；描述扩展到社会科学项目申请书评审。
-- Marketplace 使用本仓库快照中的本地相对源 path: ./；外层 Git ref 成为唯一版本选择，不再由内部 source 跳回 main。
-- 新增 proposal-reviewer-calibrator Skill，分离申请书评审与 Reviewer 校准。
-- 新增 8 个 Activation Eval、强机制申请案例和 Prompt Injection 案例。
-- 增加研究范式、自适应输出、S 级反事实校准和材料指令隔离规则。
-- 新增版本一致性脚本、Release Checklist 和 v1.0 前审计报告。
+仓库采用 portable skills-only Plugin：根目录 plugin.json 自动发现 skills/；当前不包含 MCP Server。Marketplace 的插件 source 使用本仓库快照内的 local path: ./，版本由添加 Marketplace 时指定的 Git tag/ref 决定，避免外层 ref 固定后内层再次跳回 main。
 
-## 分发与隐私
+## 能力与维护文件
 
-Plugin 只包含 anonymized Skills、方法论摘要、模板和合成 Eval。没有真实申请书、原始课件、个人信息、私人专家意见或个案评审报告。Skill 只依赖 Plugin 包内的 references、assets 和 knowledge。
+- skills/nssfc-proposal-reviewer/：主评审 Skill，保留旧调用 ID，并支持 quick、section、full、red-team。
+- skills/proposal-reviewer-calibrator/：独立校准 Skill，比较 Reviewer 与人工判断、分类差异并执行 Regression。
+- knowledge/：六份匿名化方法论摘要；来源索引属于开发 provenance，不是每次评审的权威标准。
+- evals/：核心评审案例、Activation Eval、Prompt Injection Eval、质量指标和校准记录。
+- scripts/check-version.ps1：用 PowerShell 标准库检查 VERSION、plugin.json、最新 CHANGELOG 版本及可选 Git tag。
+- RELEASE_CHECKLIST.md：版本、ref、Evals、隐私和 clean install 检查项。
+- SKILL_PLUGIN_AUDIT_REPORT.md：本轮发现、修复、实测和 v1.0 准入结论。
 
-## 安装与调用
+## 安装方式
 
-官方文档确认 Marketplace CLI 可固定 Git ref；桌面版安装路径通过 Plugins Directory。安装 tag v0.2.0 时：
+正式发布 tag 后，使用 OpenAI 文档确认的 Git Marketplace --ref：
 
-    codex plugin marketplace add shuaif266-netizen/Evaluation-Expert- --ref v0.2.0
+    codex plugin marketplace add shuaif266-netizen/Evaluation-Expert- --ref v0.2.1
 
-主 Reviewer：
+Marketplace 内部使用相对本地 source ./，所以安装文件与所固定的仓库快照一致。Codex 桌面版也可从 Plugins Directory 安装 repo Marketplace。
 
-    $nssfc-proposal-reviewer quick
-    $nssfc-proposal-reviewer section
-    $nssfc-proposal-reviewer full
-    $nssfc-proposal-reviewer red-team
+Marketplace add/list/upgrade/remove 与 --ref 由 OpenAI Plugin 文档确认。Plugin add/remove 虽出现在本机 Codex CLI 0.159.2 help 且实测成功，但官方 Plugin 打包文档未将其列为稳定接口；README 已明确区分。
 
-校准 Reviewer：
+## 测试与限制
 
-    $proposal-reviewer-calibrator
-
-Marketplace source 使用相对路径 ./，所以安装包与外层 tag/ref 来自同一 Git 快照。
-
-## 校验状态
-
-版本一致性通过 scripts/check-version.ps1。官方 Plugin 文档确认 portable manifest、固定 skills/ 目录、Marketplace 相对路径和 Git ref/sha source 选择器。Codex CLI 0.159.2 help 另列出 plugin add/remove；这些命令的 CLI 安装流程应标注为本机版本确认，不宣称为官方文档稳定教程。
-
-实际 clean install、Eval 行为测试和剩余限制见 SKILL_PLUGIN_AUDIT_REPORT.md。未完成模型行为验证时，不将静态结构检查描述为语义 Regression 通过。
+在 Codex CLI 0.159.2 上用 v0.2.0 tag 做过 snapshot / plugin install / cache 检查和合成行为回归；v0.2.1 是不改 Reviewer 核心模型的 Eval、审计记录和文档补丁。详细结果、历史隐私阻断项及 v1.0 状态见 SKILL_PLUGIN_AUDIT_REPORT.md。
