@@ -3,6 +3,8 @@
 05_评审结果/
 .review_tmp/
 tmp/
+temp/
+output/
 
 # Source material and office/PDF originals must not enter the distributable plugin
 01_*原始材料/
@@ -11,7 +13,17 @@ tmp/
 *.docx
 *.ppt
 *.pptx
+~$*.doc*
+~$*.ppt*
+~$*.xls*
 
-# Local review outputs
-output/
+# OS and editor artifacts
+Thumbs.db
+desktop.ini
+.DS_Store
+*.tmp
+*.bak
+*.swp
 *.report.json
+
+# To publish an approved public PDF later, add an explicit exception for that exact relative path.

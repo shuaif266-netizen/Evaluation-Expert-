@@ -32,3 +32,34 @@
 ### 防止过拟合
 
 规则写成跨领域的问题类型和证据判断，不保留个案主题、特定表格字段或固定方法清单。合规阻断必须以本次提供的明确规则为依据。后续校准至少覆盖不同学科、不同范式和“无严重问题”的案例。
+
+## 2026-10-02：v0.2.0 Plugin 工程审计
+
+- 触发：v1.0 前审计要求检查 Marketplace 固定版本、Skill 激活、材料指令隔离和长期校准机制。
+- 发现：旧 Marketplace 的 plugin source 再指向 GitHub main，外层固定 ref 不能保证最终插件内容固定；评审 Skill 也缺少显式材料指令隔离。
+- 判断：Marketplace ref 漂移和材料注入隔离属于可跨项目复用的工程/安全问题；新增研究范式、自适应报告和 S 级校准属于规则澄清。
+- 修改：Marketplace source 改为快照内相对路径；新增 Activation 与 Prompt Injection Eval；新增 Calibrator Skill、版本脚本和发布清单。
+- 回归：本记录只确认目录、路径和构建层面检查。模型行为 Regression 需在独立干净会话中记录，不把静态检查冒充语义通过。
+- 过拟合控制：旧七个案例及 good proposal 保留；新增强机制案例检验结论与证据匹配，不将个案题材写入通用规则。
+
+## 新增校准记录模板
+
+后续每次校准按以下字段登记。真实申请书、个人信息和未获发布授权的专家意见只留在受控本地材料中，不写入 GitHub。
+
+| 字段 | 记录 |
+|---|---|
+| 日期 / Plugin 版本 | |
+| 测试案例 / 学科 / 研究范式 | |
+| 冻结的 Reviewer 输出 | |
+| 人工判断及依据 | |
+| True Positive | |
+| False Positive | |
+| False Negative | |
+| Severity Error | |
+| 泛化标签（Case-specific / Generalizable / Domain-specific / Uncertain） | |
+| 建议修改及适用边界 | |
+| Regression 案例与结果 | |
+| 是否采纳 / 修改文件 | |
+| 对应版本 / tag | |
+
+单一普通案例不得改变核心模型。一般规则须由两个独立案例支持，或由一个高质量案例、明确人工专家依据和通过的 Regression Eval 支持。案例不足时记录为 Uncertain 并继续观察。

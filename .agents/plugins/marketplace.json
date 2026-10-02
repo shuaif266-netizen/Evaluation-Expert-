@@ -10,9 +10,8 @@
         "displayName": "Evaluation Expert"
       },
       "source": {
-        "source": "url",
-        "url": "https://github.com/shuaif266-netizen/Evaluation-Expert-.git",
-        "ref": "main"
+        "source": "local",
+        "path": "./"
       },
       "policy": {
         "installation": "AVAILABLE",

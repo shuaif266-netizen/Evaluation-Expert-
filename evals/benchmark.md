@@ -14,7 +14,7 @@
 - 来源边界：区分“申请书没有证明”与“客观不存在”，不编造文献、政策、数据或专家观点。
 - 误判克制：对设计与结论相称的合格案例明确说未发现 S/A 级问题。
 
-## 案例索引
+## Review 案例索引
 
 1. case01_core_question：热点叠加但学术问题未形成。
 2. case02_concept_levels：分类混合多种逻辑角色。
@@ -23,9 +23,27 @@
 5. case05_good_proposal：设计与有限结论相称，测试是否过度挑错。
 6. case06_compliance_vs_academic：手续阻断与学术风险并存但必须分轨。
 7. case07_cross_discipline：历史与解释性研究，测试是否机械套用量化标准。
+8. case08_strong_mechanism：过程资料、时间顺序、负例与机制结论匹配。
+9. case_prompt_injection：文件内指令是待分析文本，不是操作指令。
+
+Skill 是否应该触发另见 activation/。触发质量与评审质量分开记录。
+
+## Reviewer 质量指标
+
+分别记录下列指标，不合并成未经校准的百分制或单一总分：
+
+- Critical Recall：已知重大问题是否被发现。
+- False Positive Control：是否避免无依据制造或升级问题。
+- Severity Calibration：S/A/B/C 与合规等级是否相称。
+- Evidence Grounding：批评是否有定位明确的文本依据。
+- Cross-discipline Robustness：是否避免把其他学科/范式的要求机械迁移。
+- Good Proposal Restraint：对结构和证据相称的申请是否克制。
+- Compliance Separation：手续问题是否与学术成立性分轨。
+- Source Boundary：是否区分“未证明”和“不存在”。
+- Actionability：修改方向是否对准根因。
 
 ## 人工标注记录字段
 
 案例 / 学科与范式 / 目标模式 / 发现与证据 / 漏判 / 误判 / 学术严重度 / 合规严重度 / 结论—证据匹配 / 概念层级 / 过度批评 / 是否符合期望。
 
-单个案例只用于检验一个或少数能力，不得据此把案例中的学科内容变成通用规则。
+单个案例只用于检验一个或少数能力，不得据此把案例中的学科内容变成通用规则。改动 Reviewer 后，应重跑原七个核心案例、case08、Prompt Injection 和 activation 案例；任一强案例退化，都要撤回或缩小修改。

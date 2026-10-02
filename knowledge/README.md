@@ -8,7 +8,7 @@
 - B：多个材料的结构或做法可归纳出的稳定关系。
 - C：本评审系统为诊断和测试提出的分析性推断。
 
-A/B/C 表示来源证据类型，不是问题严重度。来源定位、边界和迁移要求见 ../skills/nssfc-proposal-reviewer/references/expert-source-map.md。
+A/B/C 表示开发方法来源的证据类型，不是问题严重度，也不是使用者每次评审必须援引的权威标准。它们是 Plugin 的 provenance 记录，不代表所有申请书都必须采用来源样本中的结构、概念或方法。来源定位、边界和迁移要求见 ../skills/nssfc-proposal-reviewer/references/expert-source-map.md。
 
 ## 条目
 
