@@ -1,0 +1,17 @@
+# Private applications, reports, and temporary extraction
+04_待评申请书/
+05_评审结果/
+.review_tmp/
+tmp/
+
+# Source material and office/PDF originals must not enter the distributable plugin
+01_*原始材料/
+*.pdf
+*.doc
+*.docx
+*.ppt
+*.pptx
+
+# Local review outputs
+output/
+*.report.json

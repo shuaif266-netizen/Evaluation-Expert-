@@ -1,0 +1,17 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "evaluation-expert",
+  "version": "0.1.0",
+  "description": "用于严格、证据驱动的社会科学科研项目申请书同行评审，重点发现核心研究问题、理论逻辑、概念结构、研究设计、方法—证据匹配、创新性和竞争性风险。",
+  "repository": "https://github.com/shuaif266-netizen/Evaluation-Expert-",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Evaluation Expert",
+        "shortDescription": "社会科学科研项目申请书的证据驱动评审",
+        "longDescription": "模拟严格、审慎的同行评审，检查核心学术问题、理论逻辑、概念结构、研究设计、方法与证据匹配、创新和竞争风险。支持 quick、section、full、red-team 四种模式。",
+        "category": "Productivity"
+      }
+    }
+  }
+}
