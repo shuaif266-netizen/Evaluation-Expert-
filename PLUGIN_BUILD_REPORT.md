@@ -20,7 +20,7 @@
 
 ## 安装方式
 
-正式发布 tag 后，使用 OpenAI 文档确认的 Git Marketplace --ref：
+固定到当前发布 tag 时，使用 OpenAI 文档确认的 Git Marketplace --ref：
 
     codex plugin marketplace add shuaif266-netizen/Evaluation-Expert- --ref v0.2.1
 
@@ -30,4 +30,4 @@ Marketplace add/list/upgrade/remove 与 --ref 由 OpenAI Plugin 文档确认。P
 
 ## 测试与限制
 
-在 Codex CLI 0.159.2 上用 v0.2.0 tag 做过 snapshot / plugin install / cache 检查和合成行为回归；v0.2.1 是不改 Reviewer 核心模型的 Eval、审计记录和文档补丁。详细结果、历史隐私阻断项及 v1.0 状态见 SKILL_PLUGIN_AUDIT_REPORT.md。
+Codex CLI 0.159.2 已从 v0.2.0 与 v0.2.1 tag 建立 Marketplace snapshot 并安装 Plugin；v0.2.1 的隔离 CODEX_HOME 安装缓存版本、两个 Skill 路径、snapshot SHA 和 tag SHA 一致。Reviewer/Calibrator 合成行为回归在 Reviewer 指令未改变的 v0.2.0 Skill 上运行；v0.2.1 修订强机制 Eval 夹具、版本说明和审计记录。历史提交隐私项及 v1.0 阻断项见 SKILL_PLUGIN_AUDIT_REPORT.md。
