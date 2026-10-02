@@ -2,6 +2,10 @@
 
 版本遵循语义化版本：PATCH 用于不改变判断框架的小修正；MINOR 用于新增模式或重要校准；MAJOR 用于改变核心评审模型或输出协议。
 
+## 0.1.1 — 2026-10-02
+
+- 修正构建报告中 Skill 校验器依赖的表述，明确为本机快速校验脚本缺少 PyYAML。
+
 ## 0.1.0 — 2026-10-02
 
 - 将已验证的 proposal reviewer 规范封装为根目录 portable plugin manifest 与 skills-only Codex plugin。

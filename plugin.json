@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "evaluation-expert",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "用于严格、证据驱动的社会科学科研项目申请书同行评审，重点发现核心研究问题、理论逻辑、概念结构、研究设计、方法—证据匹配、创新性和竞争性风险。",
   "repository": "https://github.com/shuaif266-netizen/Evaluation-Expert-",
   "extensions": {
